@@ -15,3 +15,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+.nav-links {
+  padding: 12px 180px;
+  background: #0281f7;
+  color: white;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  border-radius: 18px;
+  padding: 6px 24px;
+  font-size: 18px;
+}
+
+.nav-link-active {
+  background: #023bf7;
+}
