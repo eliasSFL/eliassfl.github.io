@@ -6,17 +6,22 @@ import gitHubIcon from "../../../assets/social.png";
 
 export const Contact: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h1 className="text-4xl mt-10">Contact Me</h1>
+    <div className="flex flex-col items-center justify-center p-4 md:p-8">
+      <h1 className="text-3xl md:text-4xl mt-6 md:mt-10">Contact Me</h1>
       <img
         src="https://media.licdn.com/dms/image/v2/D5603AQGDJRqJdBg2WQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720013407415?e=1741219200&v=beta&t=BaylGWJfRuAOteyM68mhGIsN63ki24vErAJhF-LeqTY"
         alt="Elias"
-        className="rounded-full w-40 h-40 mt-4"
+        className="rounded-full w-32 h-32 md:w-40 md:h-40 mt-4"
       />
-      <div className="flex flex-row flex-wrap mt-4 justify-around w-full gap-8">
-        <div className="flex flex-col items-center">
-          <img src={emailIcon} alt="Email" className="w-40 h-40" />
-          <span className="text-4xl mt-2">Email</span>
+      <div className="flex flex-col md:flex-row md:flex-wrap mt-8 justify-around w-full gap-4 md:gap-8">
+        {/* Email */}
+        <div className="flex flex-col items-center w-full sm:w-auto">
+          <img
+            src={emailIcon}
+            alt="Email"
+            className="w-24 h-24 md:w-40 md:h-40"
+          />
+          <span className="text-2xl md:text-4xl mt-2">Email</span>
           <a
             href="mailto:elias.chew1999@gmail.com"
             className="text-blue-400 mt-2"
@@ -24,11 +29,7 @@ export const Contact: React.FC = () => {
             elias.chew1999@gmail.com
           </a>
         </div>
-        <div className="flex flex-col items-center">
-          <img src={phoneIcon} alt="Phone" className="w-40 h-40" />
-          <span className="text-4xl mt-2">Phone</span>
-          <span className="text-blue-400 mt-2">+65 8482 2808</span>
-        </div>
+        {/* LinkedIn */}
         <div className="flex flex-col items-center">
           <img src={linkedInIcon} alt="LinkedIn" className="w-40 h-40" />
           <span className="text-4xl mt-2">LinkedIn</span>
@@ -41,6 +42,7 @@ export const Contact: React.FC = () => {
             www.linkedin.com/in/eliassfl
           </a>
         </div>
+        {/* GitHub */}
         <div className="flex flex-col items-center">
           <img src={gitHubIcon} alt="GitHub" className="w-40 h-40" />
           <span className="text-4xl mt-2">GitHub</span>

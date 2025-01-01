@@ -2,7 +2,7 @@ import React from "react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#234234] text-white p-4 text-center">
+    <footer className="bg-[#234234] text-white p-2 md:p-4 text-center text-sm md:text-base">
       <div className="space-x-4">
         <a
           href="www.linkedin.com/in/eliassfl"
