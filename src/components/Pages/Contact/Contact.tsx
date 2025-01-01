@@ -1,10 +1,12 @@
 import React from "react";
 import emailIcon from "../../../assets/mail.png";
-import phoneIcon from "../../../assets/phone-call.png";
 import linkedInIcon from "../../../assets/linkedin.png";
 import gitHubIcon from "../../../assets/social.png";
 
 export const Contact: React.FC = () => {
+  const handleClick = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
   return (
     <div className="flex flex-col items-center justify-center p-4 md:p-8">
       <h1 className="text-3xl md:text-4xl mt-6 md:mt-10">Contact Me</h1>
@@ -15,7 +17,10 @@ export const Contact: React.FC = () => {
       />
       <div className="flex flex-col md:flex-row md:flex-wrap mt-8 justify-around w-full gap-4 md:gap-8">
         {/* Email */}
-        <div className="flex flex-col items-center w-full sm:w-auto">
+        <div
+          className="flex flex-col items-center w-full sm:w-auto cursor-pointer"
+          onClick={() => handleClick("mailto:elias.chew1999@gmail.com")}
+        >
           <img
             src={emailIcon}
             alt="Email"
@@ -30,7 +35,10 @@ export const Contact: React.FC = () => {
           </a>
         </div>
         {/* LinkedIn */}
-        <div className="flex flex-col items-center">
+        <div
+          className="flex flex-col items-center cursor-pointer"
+          onClick={() => handleClick("https://www.linkedin.com/in/eliassfl")}
+        >
           <img src={linkedInIcon} alt="LinkedIn" className="w-40 h-40" />
           <span className="text-4xl mt-2">LinkedIn</span>
           <a
@@ -43,7 +51,10 @@ export const Contact: React.FC = () => {
           </a>
         </div>
         {/* GitHub */}
-        <div className="flex flex-col items-center">
+        <div
+          className="flex flex-col items-center cursor-pointer"
+          onClick={() => handleClick("https://www.github.com/eliasSFL")}
+        >
           <img src={gitHubIcon} alt="GitHub" className="w-40 h-40" />
           <span className="text-4xl mt-2">GitHub</span>
           <a
