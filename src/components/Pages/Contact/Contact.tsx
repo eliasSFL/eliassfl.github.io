@@ -2,10 +2,43 @@ import {
   faDiscord,
   faGithub,
   faLinkedin,
+  IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+
+interface ContactItem {
+  icon: IconDefinition;
+  link?: string;
+  display: string;
+  hover?: boolean;
+}
+
+const contactInfo: Record<string, ContactItem> = {
+  Email: {
+    icon: faEnvelope,
+    link: "mailto:elias.chew1999@gmail.com",
+    display: "elias.chew1999@gmail.com",
+    hover: true,
+  },
+  Discord: {
+    icon: faDiscord,
+    display: "eliassfl",
+  },
+  LinkedIn: {
+    icon: faLinkedin,
+    link: "https://www.linkedin.com/in/eliassfl",
+    display: "linkedin.com/in/eliassfl",
+    hover: true,
+  },
+  GitHub: {
+    icon: faGithub,
+    link: "https://www.github.com/eliasSFL",
+    display: "github.com/eliasSFL",
+    hover: true,
+  },
+};
 
 export const Contact: React.FC = () => {
   const handleClick = (url: string) => {
@@ -19,71 +52,49 @@ export const Contact: React.FC = () => {
         alt="Elias"
         className="rounded-full w-32 h-32 md:w-40 md:h-40 mt-4"
       />
-      <div className="flex flex-col md:flex-row md:flex-wrap mt-8 justify-around w-2/3 gap-4 md:gap-8">
-        {/* Email */}
-        <div
-          className="flex flex-col items-center w-full sm:w-auto cursor-pointer"
-          onClick={() => handleClick("mailto:elias.chew1999@gmail.com")}
+      <div className="flex flex-col items-center gap-3 mt-4 w-full">
+        <h2 className="my-5">Socials</h2>
+        <div className="flex flex-col md:flex-row md:flex-wrap justify-around w-2/3 gap-4 md:gap-8">
+          {Object.entries(contactInfo).map(
+            ([social, { link, icon, display, hover }]) => (
+              <div
+                key={social}
+                className={`flex flex-col items-center ${hover ? "cursor-pointer" : ""}`}
+                onClick={() => link && handleClick(link)}
+              >
+                <FontAwesomeIcon
+                  icon={icon}
+                  className="w-24 h-24 md:w-40 md:h-40"
+                />
+                <span className="text-4xl mt-2">{social}</span>
+                {link ? (
+                  <a
+                    href={link}
+                    className="text-blue-400 mt-2"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {display}
+                  </a>
+                ) : (
+                  <span className="text-blue-400 mt-2">{display}</span>
+                )}
+              </div>
+            )
+          )}
+        </div>
+      </div>
+      <div className="mt-6">
+        <h2>Or fill in this form</h2>
+        <iframe
+          title="Contact Form"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSezSd2a3VpxDfErlGTmM8WtrgGFUrqLhu5Azs-MP_4pS6JE3w/viewform?embedded=true"
+          width={640}
+          height={600}
         >
-          <FontAwesomeIcon
-            icon={faEnvelope}
-            className="w-24 h-24 md:w-40 md:h-40"
-          />
-          <span className="text-2xl md:text-4xl mt-2">Email</span>
-          <a
-            href="mailto:elias.chew1999@gmail.com"
-            className="text-blue-400 mt-2"
-          >
-            elias.chew1999@gmail.com
-          </a>
-        </div>
-        {/* Discord */}
-        <div className="flex flex-col items-center">
-          <FontAwesomeIcon
-            icon={faDiscord}
-            className="w-24 h-24 md:w-40 md:h-40"
-          />
-          <span className="text-4xl mt-2">Discord</span>
-          <span className="text-blue-400 mt-2">eliassfl</span>
-        </div>
-        {/* LinkedIn */}
-        <div
-          className="flex flex-col items-center cursor-pointer"
-          onClick={() => handleClick("https://www.linkedin.com/in/eliassfl")}
-        >
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            className="w-24 h-24 md:w-40 md:h-40"
-          />
-          <span className="text-4xl mt-2">LinkedIn</span>
-          <a
-            href="https://www.linkedin.com/in/eliassfl"
-            className="text-blue-400 mt-2"
-            target="_blank"
-            rel="noreferrer"
-          >
-            www.linkedin.com/in/eliassfl
-          </a>
-        </div>
-        {/* GitHub */}
-        <div
-          className="flex flex-col items-center cursor-pointer"
-          onClick={() => handleClick("https://www.github.com/eliasSFL")}
-        >
-          <FontAwesomeIcon
-            icon={faGithub}
-            className="w-24 h-24 md:w-40 md:h-40"
-          />
-          <span className="text-4xl mt-2">GitHub</span>
-          <a
-            href="https://www.github.com/eliasSFL"
-            className="text-blue-400 mt-2"
-            target="_blank"
-            rel="noreferrer"
-          >
-            www.github.com/eliasSFL
-          </a>
-        </div>
+          {/* Show loading when form hasn't loaded */}
+          Loading…
+        </iframe>
       </div>
     </div>
   );
