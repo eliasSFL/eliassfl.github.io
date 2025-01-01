@@ -3,24 +3,31 @@ import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "react-tooltip/dist/react-tooltip.css";
 
-import { HashRouter, Routes, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import { Root } from "../Root/Root";
 import { Contact } from "../Pages/Contact/Contact";
 import { About } from "../Pages/About/About";
 import { ErrorElement } from "../ErrorHandling/ErrorBoundary";
 
+const appRouter = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/portfolio" element={<Root />}>
+        <Route index element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<ErrorElement />} />
+      </Route>
+    </>
+  )
+);
+
 const App: React.FC = () => {
-  return (
-    <HashRouter>
-      <Routes>
-        <Route path="/portfolio" element={<Root />}>
-          <Route index element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<ErrorElement />} />
-        </Route>
-      </Routes>
-    </HashRouter>
-  );
+  return <RouterProvider router={appRouter} />;
 };
 
 export default App;
