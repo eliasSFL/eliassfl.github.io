@@ -12,6 +12,7 @@ import {
 import { Root } from "../Root/Root";
 import { Contact } from "../Pages/Contact/Contact";
 import { About } from "../Pages/About/About";
+import { ErrorElement } from "../ErrorHandling/ErrorBoundary";
 
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const appRouter = createBrowserRouter(
       <Route path="/portfolio" element={<Root />}>
         <Route index element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<ErrorElement />} />
       </Route>
     </>
   )
