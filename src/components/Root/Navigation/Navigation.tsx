@@ -3,8 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../../../src/assets/Elias_Chew_logo.png";
 
 const NAVIGATION_LINKS = {
-  Home: "/portfolio",
-  About: "/portfolio/about",
+  About: "/portfolio",
   Skills: "/portfolio/skills",
   Projects: "/portfolio/projects",
   Contact: "/portfolio/contact",
@@ -27,7 +26,7 @@ export const Navigation: React.FC = () => {
           <li key={index}>
             <NavLink
               to={value}
-              end={key === "Home"}
+              end={key === "About"}
               className={({ isActive }) =>
                 `nav-link ${isActive ? `nav-link-active` : ""}`
               }

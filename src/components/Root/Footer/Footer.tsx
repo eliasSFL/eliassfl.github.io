@@ -21,13 +21,6 @@ export const Footer: React.FC = () => {
           GitHub
         </a>
       </div>
-      <a
-        href="https://www.flaticon.com"
-        title="Flaticon"
-        className="mt-2 hover:text-blue-300"
-      >
-        Icons created by Freepik - Flaticon
-      </a>
       <p className="mt-2">&copy; 2025 Elias Chew. All Rights Reserved.</p>
     </footer>
   );
