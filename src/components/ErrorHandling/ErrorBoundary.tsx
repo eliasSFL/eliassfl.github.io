@@ -70,7 +70,10 @@ export const ErrorElement: React.FC = () => {
 const ReturnHomeButton: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <button className="round" onClick={() => navigate("/portfolio")}>
+    <button
+      className="border-solid border-2 border-blue-500 text-white bg-blue-500 hover:bg-blue-700 rounded-md px-4 py-2 transition-all duration-200"
+      onClick={() => navigate("/portfolio")}
+    >
       Return Home
     </button>
   );
