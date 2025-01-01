@@ -10,8 +10,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Root } from "../Root/Root";
-import { Contact } from "../Pages/Contact/Contact";
-import { About } from "../Pages/About/About";
+import { Contact } from "../Pages/Contact";
+import { About } from "../Pages/About";
 import { ErrorElement } from "../ErrorHandling/ErrorBoundary";
 
 const appRouter = createBrowserRouter(

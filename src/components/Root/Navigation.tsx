@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../../src/assets/Elias_Chew_logo.png";
+import logo from "../../../src/assets/Elias_Chew_logo.png";
 
 const NAVIGATION_LINKS = {
   About: "/portfolio",
