@@ -4,13 +4,19 @@ import "./App.css";
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Navigate,
   Route,
   RouterProvider,
 } from "react-router-dom";
 import { Root } from "../Root/Root";
 
 const appRouter = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Root />}></Route>)
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<Navigate to="/portfolio" replace />} />
+      <Route path="/portfolio" element={<Root />}></Route>
+    </>
+  )
 );
 
 const App: React.FC = () => {

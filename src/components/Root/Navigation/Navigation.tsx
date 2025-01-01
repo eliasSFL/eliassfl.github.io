@@ -7,7 +7,7 @@ export const Navigation: React.FC = () => {
     <nav>
       <div className="nav-logo">
         <Link
-          to="/"
+          to="/portfolio"
           style={{ textDecoration: "none", color: "inherit" }}
           className="text-5xl"
         >
@@ -27,7 +27,7 @@ export const Navigation: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to="/about"
+            to="/portfolio/about"
             className={({ isActive }) =>
               `nav-link ${isActive ? `nav-link-active` : ""}`
             }
@@ -37,7 +37,7 @@ export const Navigation: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to="/experience"
+            to="/portfolio/experience"
             className={({ isActive }) =>
               `nav-link ${isActive ? `nav-link-active` : ""}`
             }
@@ -47,7 +47,7 @@ export const Navigation: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to="/skills"
+            to="/portfolio/skills"
             className={({ isActive }) =>
               `nav-link ${isActive ? `nav-link-active` : ""}`
             }
@@ -57,7 +57,7 @@ export const Navigation: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to="/projects"
+            to="/portfolio/projects"
             className={({ isActive }) =>
               `nav-link ${isActive ? `nav-link-active` : ""}`
             }
@@ -67,7 +67,7 @@ export const Navigation: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to="/contact"
+            to="/portfolio/contact"
             className={({ isActive }) =>
               `nav-link ${isActive ? `nav-link-active` : ""}`
             }
