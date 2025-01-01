@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.09772168.css",
-    "main.js": "/portfolio/static/js/main.7148917d.js",
+    "main.css": "/portfolio/static/css/main.78587b65.css",
+    "main.js": "/portfolio/static/js/main.c8de245f.js",
     "static/js/453.873a6f75.chunk.js": "/portfolio/static/js/453.873a6f75.chunk.js",
     "static/media/social.png": "/portfolio/static/media/social.edd7af3537b438e2b620.png",
     "static/media/Elias_Chew_logo.png": "/portfolio/static/media/Elias_Chew_logo.812acfdaf9a4310c4884.png",
-    "static/media/phone-call.png": "/portfolio/static/media/phone-call.4b7d3b664293d46d47f0.png",
     "static/media/mail.png": "/portfolio/static/media/mail.2c378c9ee25927123f7d.png",
     "index.html": "/portfolio/index.html",
-    "main.09772168.css.map": "/portfolio/static/css/main.09772168.css.map",
-    "main.7148917d.js.map": "/portfolio/static/js/main.7148917d.js.map",
+    "main.78587b65.css.map": "/portfolio/static/css/main.78587b65.css.map",
+    "main.c8de245f.js.map": "/portfolio/static/js/main.c8de245f.js.map",
     "453.873a6f75.chunk.js.map": "/portfolio/static/js/453.873a6f75.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.09772168.css",
-    "static/js/main.7148917d.js"
+    "static/css/main.78587b65.css",
+    "static/js/main.c8de245f.js"
   ]
 }
