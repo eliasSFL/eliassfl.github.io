@@ -1,4 +1,33 @@
+import {
+  faCss3Alt,
+  faGitAlt,
+  faHtml5,
+  faJs,
+  faLinux,
+  faNode,
+  faNpm,
+  faReact,
+  faSquareGithub,
+  faYarn,
+  IconDefinition,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { isMobile } from "mobile-device-detect";
 import React from "react";
+import { Tooltip } from "react-tooltip";
+
+const SkillIcons: { [key: string]: IconDefinition } = {
+  HTML5: faHtml5,
+  CSS3: faCss3Alt,
+  JavaScript: faJs,
+  React: faReact,
+  NodeJS: faNode,
+  npm: faNpm,
+  Yarn: faYarn,
+  Git: faGitAlt,
+  GitHub: faSquareGithub,
+  Linux: faLinux,
+};
 
 export const About: React.FC = () => {
   return (
@@ -26,21 +55,23 @@ export const About: React.FC = () => {
       </section>
       <section id="skills">
         <h2>Skills</h2>
-        <div id="skills-container">
-          <i className="fab fa-html5"></i>
-          <i className="fab fa-css3-alt"></i>
-          <i className="fab fa-js"></i>
-          <i className="fab fa-react"></i>
-          <i className="fab fa-aws"></i>
-          <i className="fab fa-sketch"></i>
-          <i className="fab fa-figma"></i>
-          <i className="fab fa-git"></i>
-          <i className="fab fa-chrome"></i>
-          <i className="fas fa-terminal"></i>
-          <i className="fas fa-universal-access"></i>
-          <i className="fab fa-npm"></i>
-          <i className="fab fa-node"></i>
-          <i className="fab fa-github"></i>
+        <div className="flex flex-row flex-wrap gap-3">
+          {Object.entries(SkillIcons).map(([name, icon], index) => (
+            <>
+              <FontAwesomeIcon
+                key={index}
+                icon={icon}
+                className={`w-10 h-10 md:w-16 md:h-16 ${name}`}
+              />
+              <Tooltip
+                anchorSelect={`.${name}`}
+                place="bottom"
+                openOnClick={isMobile ? true : false}
+              >
+                {name}
+              </Tooltip>
+            </>
+          ))}
         </div>
       </section>
     </main>

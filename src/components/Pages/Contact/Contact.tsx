@@ -1,4 +1,8 @@
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faDiscord,
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -32,6 +36,15 @@ export const Contact: React.FC = () => {
           >
             elias.chew1999@gmail.com
           </a>
+        </div>
+        {/* Discord */}
+        <div className="flex flex-col items-center">
+          <FontAwesomeIcon
+            icon={faDiscord}
+            className="w-24 h-24 md:w-40 md:h-40"
+          />
+          <span className="text-4xl mt-2">Discord</span>
+          <span className="text-blue-400 mt-2">eliassfl</span>
         </div>
         {/* LinkedIn */}
         <div
@@ -72,38 +85,6 @@ export const Contact: React.FC = () => {
           </a>
         </div>
       </div>
-
-      {/* <p className="mt-4">
-        Email:{" "}
-        <a href="mailto:elias.chew1999@gmail.com" className="text-blue-400">
-          elias.chew1999@gmail.com
-        </a>
-      </p>
-      <p>
-        Phone: <span className="text-blue-400">+65 8482 2808</span>
-      </p>
-      <p>
-        LinkedIn:{" "}
-        <a
-          href="https://www.linkedin.com/in/eliassfl"
-          className="text-blue-400"
-          target="_blank"
-          rel="noreferrer"
-        >
-          www.linkedin.com/in/eliassfl
-        </a>
-      </p>
-      <p>
-        GitHub:{" "}
-        <a
-          href="https://www.github.com/eliasSFL"
-          className="text-blue-400"
-          target="_blank"
-          rel="noreferrer"
-        >
-          www.github.com/eliasSFL
-        </a>
-      </p> */}
     </div>
   );
 };
