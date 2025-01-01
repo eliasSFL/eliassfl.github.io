@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
           GitHub
         </a>
       </div>
-      <p className="mt-4">&copy; 2024 Elias Chew. All Rights Reserved.</p>
+      <p className="mt-4">&copy; 2025 Elias Chew. All Rights Reserved.</p>
     </footer>
   );
 };

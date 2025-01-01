@@ -2,6 +2,15 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../../src/assets/Elias_Chew_logo.png";
 
+const NAVIGATION_LINKS = {
+  Home: "/portfolio",
+  About: "/portfolio/about",
+  Experience: "/portfolio/experience",
+  Skills: "/portfolio/skills",
+  Projects: "/portfolio/projects",
+  Contact: "/portfolio/contact",
+};
+
 export const Navigation: React.FC = () => {
   return (
     <nav>
@@ -15,66 +24,18 @@ export const Navigation: React.FC = () => {
         </Link>
       </div>
       <ul className="nav-links">
-        <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `nav-link ${isActive ? `nav-link-active` : ""}`
-            }
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/portfolio/about"
-            className={({ isActive }) =>
-              `nav-link ${isActive ? `nav-link-active` : ""}`
-            }
-          >
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/portfolio/experience"
-            className={({ isActive }) =>
-              `nav-link ${isActive ? `nav-link-active` : ""}`
-            }
-          >
-            Experience
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/portfolio/skills"
-            className={({ isActive }) =>
-              `nav-link ${isActive ? `nav-link-active` : ""}`
-            }
-          >
-            Skills
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/portfolio/projects"
-            className={({ isActive }) =>
-              `nav-link ${isActive ? `nav-link-active` : ""}`
-            }
-          >
-            Projects
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/portfolio/contact"
-            className={({ isActive }) =>
-              `nav-link ${isActive ? `nav-link-active` : ""}`
-            }
-          >
-            Contact
-          </NavLink>
-        </li>
+        {Object.entries(NAVIGATION_LINKS).map(([key, value], index) => (
+          <li key={index}>
+            <NavLink
+              to={value}
+              className={({ isActive }) =>
+                `nav-link ${isActive ? `nav-link-active` : ""}`
+              }
+            >
+              {key}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );

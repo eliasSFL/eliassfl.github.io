@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import {
   createBrowserRouter,
@@ -13,7 +12,6 @@ import { Root } from "../Root/Root";
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Navigate to="/portfolio" replace />} />
       <Route path="/portfolio" element={<Root />}></Route>
     </>
   )
