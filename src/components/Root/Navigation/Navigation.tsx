@@ -28,6 +28,7 @@ export const Navigation: React.FC = () => {
           <li key={index}>
             <NavLink
               to={value}
+              end={key === "Home"}
               className={({ isActive }) =>
                 `nav-link ${isActive ? `nav-link-active` : ""}`
               }
