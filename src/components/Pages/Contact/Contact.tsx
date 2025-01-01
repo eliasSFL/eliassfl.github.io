@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 interface ContactItem {
   icon: IconDefinition;
@@ -41,6 +41,19 @@ const contactInfo: Record<string, ContactItem> = {
 };
 
 export const Contact: React.FC = () => {
+  const [iframeWidth, setIframeWidth] = useState(770);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = Math.min(770, Math.max(window.innerWidth - 40));
+      setIframeWidth(width);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleClick = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -84,12 +97,12 @@ export const Contact: React.FC = () => {
           )}
         </div>
       </div>
-      <div className="mt-6">
+      <div className="mt-6 flex flex-col items-center">
         <h2>Or fill in this form</h2>
         <iframe
           title="Contact Form"
           src="https://docs.google.com/forms/d/e/1FAIpQLSezSd2a3VpxDfErlGTmM8WtrgGFUrqLhu5Azs-MP_4pS6JE3w/viewform?embedded=true"
-          width={640}
+          width={iframeWidth}
           height={600}
         >
           {/* Show loading when form hasn't loaded */}
