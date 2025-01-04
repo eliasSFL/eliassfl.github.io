@@ -16,6 +16,10 @@ code {
     monospace;
 }
 
+.portfolio {
+  border: 1px dashed black;
+}
+
 .nav-logo {
   display: flex;
   align-items: center;

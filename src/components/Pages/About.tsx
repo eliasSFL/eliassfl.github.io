@@ -11,15 +11,17 @@ import {
   faYarn,
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
+import typescriptIcon from "../../../src/assets/typescript.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { isMobile } from "mobile-device-detect";
 import React from "react";
 import { Tooltip } from "react-tooltip";
 
-const SkillIcons: { [key: string]: IconDefinition } = {
+export const SkillIcons = {
   HTML5: faHtml5,
   CSS3: faCss3Alt,
   JavaScript: faJs,
+  TypeScript: typescriptIcon,
   React: faReact,
   NodeJS: faNode,
   npm: faNpm,
@@ -27,7 +29,9 @@ const SkillIcons: { [key: string]: IconDefinition } = {
   Git: faGitAlt,
   GitHub: faGithub,
   Linux: faLinux,
-};
+} as Record<string, IconDefinition | string>;
+
+export type SkillName = keyof typeof SkillIcons;
 
 export const About: React.FC = () => {
   return (
@@ -56,22 +60,33 @@ export const About: React.FC = () => {
       <section id="skills">
         <h2>Technical Skills</h2>
         <div className="flex flex-row flex-wrap gap-3">
-          {Object.entries(SkillIcons).map(([name, icon], index) => (
-            <>
-              <FontAwesomeIcon
-                key={index}
-                icon={icon}
-                className={`w-10 h-10 md:w-16 md:h-16 ${name}`}
-              />
-              <Tooltip
-                anchorSelect={`.${name}`}
-                place="bottom"
-                openOnClick={isMobile ? true : false}
-              >
-                {name}
-              </Tooltip>
-            </>
-          ))}
+          {Object.entries(SkillIcons).map(([name, icon], index) => {
+            const isString = typeof icon === "string";
+            return (
+              <>
+                {isString ? (
+                  <img
+                    src={icon}
+                    alt={name}
+                    className={`w-10 h-10 md:w-16 md:h-16 ${name}`}
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    key={index}
+                    icon={icon}
+                    className={`w-10 h-10 md:w-16 md:h-16 ${name}`}
+                  />
+                )}
+                <Tooltip
+                  anchorSelect={`.${name}`}
+                  place="bottom"
+                  openOnClick={!!isMobile}
+                >
+                  {name}
+                </Tooltip>
+              </>
+            );
+          })}
         </div>
       </section>
       <section className="mb-5">
