@@ -13,12 +13,16 @@ import { Root } from "../Root/Root";
 import { Contact } from "../Pages/Contact";
 import { About } from "../Pages/About";
 import { ErrorElement } from "../ErrorHandling/ErrorBoundary";
+import { MyStory } from "../Pages/MyStory";
+import { Projects } from "../Pages/Projects";
 
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/portfolio" element={<Root />}>
         <Route index element={<About />} />
+        <Route path="story" element={<MyStory />} />
+        <Route path="projects" element={<Projects />} />
         <Route path="contact" element={<Contact />} />
         <Route path="*" element={<ErrorElement />} />
       </Route>

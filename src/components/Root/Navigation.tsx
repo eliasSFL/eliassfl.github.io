@@ -4,6 +4,7 @@ import logo from "../../../src/assets/Elias_Chew_logo.png";
 
 const NAVIGATION_LINKS = {
   About: "/portfolio",
+  "My Story": "/portfolio/story",
   Projects: "/portfolio/projects",
   Contact: "/portfolio/contact",
 };
