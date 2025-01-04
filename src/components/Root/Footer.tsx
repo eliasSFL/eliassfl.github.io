@@ -4,7 +4,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#234234] text-white p-2 md:p-4 text-center text-sm md:text-base gap-2">
       <p>Designed and built by Elias Chew</p>
-      <p>Powered by React and Tailwind CSS</p>
+      <p>Powered by React, TypeScript and Tailwind CSS</p>
       <a
         href="https://github.com/eliasSFL/portfolio"
         target="_blank"
