@@ -3,10 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../../src/assets/Elias_Chew_logo.png";
 
 const NAVIGATION_LINKS = {
-  About: "/portfolio",
-  "My Story": "/portfolio/story",
-  Projects: "/portfolio/projects",
-  Contact: "/portfolio/contact",
+  About: "/",
+  "My Story": "/story",
+  Projects: "/projects",
+  Contact: "/contact",
 };
 
 export const Navigation: React.FC = () => {

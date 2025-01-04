@@ -72,7 +72,7 @@ const ReturnHomeButton: React.FC = () => {
   return (
     <button
       className="border-solid border-2 border-blue-500 text-white bg-blue-500 hover:bg-blue-700 rounded-md px-4 py-2 transition-all duration-200"
-      onClick={() => navigate("/portfolio")}
+      onClick={() => navigate("/")}
     >
       Return Home
     </button>

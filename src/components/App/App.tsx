@@ -19,7 +19,7 @@ import { Projects } from "../Pages/Projects";
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/portfolio" element={<Root />}>
+      <Route path="/" element={<Root />}>
         <Route index element={<About />} />
         <Route path="story" element={<MyStory />} />
         <Route path="projects" element={<Projects />} />
