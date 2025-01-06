@@ -14,7 +14,7 @@ import { Contact } from "../Pages/Contact";
 import { About } from "../Pages/About";
 import { ErrorElement } from "../ErrorHandling/ErrorBoundary";
 import { MyStory } from "../Pages/MyStory";
-import { Projects } from "../Pages/Projects";
+import { Projects } from "../Pages/Projects/Projects";
 
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
