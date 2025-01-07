@@ -12,28 +12,32 @@ import {
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
 import typescriptIcon from "../../../src/assets/typescript.png";
+import typescriptInverted from "../../../src/assets/typescript-invert.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { isMobile } from "mobile-device-detect";
 import React from "react";
 import { Tooltip } from "react-tooltip";
+import { useIsDarkMode } from "../../utils/darkMode";
 
-export const SkillIcons = {
-  HTML5: faHtml5,
-  CSS3: faCss3Alt,
-  JavaScript: faJs,
-  TypeScript: typescriptIcon,
-  React: faReact,
-  NodeJS: faNode,
-  npm: faNpm,
-  Yarn: faYarn,
-  Git: faGitAlt,
-  GitHub: faGithub,
-  Linux: faLinux,
-} as Record<string, IconDefinition | string>;
+export const SkillIcons = (isDarkMode?: boolean) =>
+  ({
+    HTML5: faHtml5,
+    CSS3: faCss3Alt,
+    JavaScript: faJs,
+    TypeScript: isDarkMode ? typescriptInverted : typescriptIcon,
+    React: faReact,
+    NodeJS: faNode,
+    npm: faNpm,
+    Yarn: faYarn,
+    Git: faGitAlt,
+    GitHub: faGithub,
+    Linux: faLinux,
+  }) as Record<string, IconDefinition | string>;
 
-export type SkillName = keyof typeof SkillIcons;
+export type SkillName = keyof ReturnType<typeof SkillIcons>;
 
 export const About: React.FC = () => {
+  const { isDarkMode } = useIsDarkMode();
   return (
     <main className="m-0 px-4 max-w-5xl mx-auto flex flex-col gap-5">
       <section className="flex flex-col-reverse md:flex-row items-center justify-between">
@@ -60,7 +64,7 @@ export const About: React.FC = () => {
       <section id="skills">
         <h2>Technical Skills</h2>
         <div className="flex flex-row flex-wrap gap-3">
-          {Object.entries(SkillIcons).map(([name, icon], index) => {
+          {Object.entries(SkillIcons(isDarkMode)).map(([name, icon], index) => {
             const isString = typeof icon === "string";
             return (
               <>

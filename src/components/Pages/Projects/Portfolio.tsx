@@ -1,10 +1,8 @@
 import React from "react";
 import portfolio from "../../../../src/assets/portfolio.png";
 import portfolio_mobile from "../../../../src/assets/portfolio_mobile.png";
-import { SkillIcons, SkillName } from "../About";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { isMobile } from "mobile-device-detect";
-import { Tooltip } from "react-tooltip";
+import { SkillName } from "../About";
+import { SkillsApplied } from "./SkillsApplied";
 
 const PortfolioSiteSkills: SkillName[] = [
   "HTML5",
@@ -17,13 +15,13 @@ const PortfolioSiteSkills: SkillName[] = [
   "GitHub",
 ];
 
-export const Portfolio: React.FC = () => (
+export const Portfolio: React.FC<{
+  openImageOnClick: (image: string) => Window | null;
+}> = ({ openImageOnClick }) => (
   <section id="website" className="md:grid md:grid-cols-[1fr_auto] gap-5">
     <article>
       <h2>Portfolio Website</h2>
-      <h3 className="font-bold mt-3">
-        Why I decided to build my own portfolio site
-      </h3>
+      <h3 className="mt-3">Why I decided to build my own portfolio site</h3>
       <div className="flex flex-col gap-3">
         <p>
           As a software developer, I believe in showcasing my technical skills
@@ -39,37 +37,7 @@ export const Portfolio: React.FC = () => (
           small screens.
         </p>
       </div>
-      <h3 className="font-bold mt-3">Skills applied</h3>
-      <div className="flex flex-row flex-wrap gap-3">
-        {PortfolioSiteSkills.map((name, index) => {
-          const icon = SkillIcons[name];
-          const isString = typeof icon === "string";
-          return (
-            <>
-              {isString ? (
-                <img
-                  src={icon}
-                  alt={name}
-                  className={`w-10 h-10 md:w-16 md:h-16 ${name}`}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  key={index}
-                  icon={icon}
-                  className={`w-10 h-10 md:w-16 md:h-16 ${name}`}
-                />
-              )}
-              <Tooltip
-                anchorSelect={`.${name}`}
-                place="bottom"
-                openOnClick={!!isMobile}
-              >
-                {name}
-              </Tooltip>
-            </>
-          );
-        })}
-      </div>
+      <SkillsApplied skillsArray={PortfolioSiteSkills} />
     </article>
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2 items-center">
@@ -78,7 +46,7 @@ export const Portfolio: React.FC = () => (
           src={portfolio}
           alt="Elias Portfolio"
           className="md:h-60 cursor-pointer portfolio"
-          onClick={() => window.open(portfolio, "_blank")}
+          onClick={() => openImageOnClick(portfolio)}
         />
       </div>
       <div className="flex flex-col gap-2 items-center">
@@ -87,7 +55,7 @@ export const Portfolio: React.FC = () => (
           src={portfolio_mobile}
           alt="Elias Portfolio Mobile"
           className="md:h-60 md:w-[112px] cursor-pointer portfolio"
-          onClick={() => window.open(portfolio_mobile, "_blank")}
+          onClick={() => openImageOnClick(portfolio_mobile)}
         />
       </div>
     </div>

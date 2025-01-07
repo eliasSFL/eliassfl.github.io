@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../src/assets/Elias_Chew_logo.png";
+import logo_dark from "../../../src/assets/elias_chew_logo_dark.png";
+import { useIsDarkMode } from "../../utils/darkMode";
 
 const NAVIGATION_LINKS = {
   About: "/",
@@ -10,15 +12,16 @@ const NAVIGATION_LINKS = {
 };
 
 export const Navigation: React.FC = () => {
+  const { isDarkMode } = useIsDarkMode();
   return (
     <nav>
-      <div className="nav-logo">
+      <div className={`nav-logo ${isDarkMode ? "bg-[#3d3b3a]" : "bg-white"}`}>
         <Link
           to="/portfolio"
           style={{ textDecoration: "none", color: "inherit" }}
           className="text-5xl"
         >
-          <img src={logo} alt="Elias" />
+          <img src={isDarkMode ? logo_dark : logo} alt="Elias" />
         </Link>
       </div>
       <ul className="nav-links">

@@ -28,8 +28,8 @@ const contactInfo: Record<string, ContactItem> = {
   },
   LinkedIn: {
     icon: faLinkedin,
-    link: "https://www.linkedin.com/in/eliassfl",
-    display: "linkedin.com/in/eliassfl",
+    link: "https://www.linkedin.com/in/eliascse",
+    display: "linkedin.com/in/eliascse",
     hover: true,
   },
   GitHub: {
