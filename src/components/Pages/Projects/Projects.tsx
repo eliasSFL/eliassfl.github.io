@@ -14,7 +14,7 @@ export const Projects: React.FC = () => {
       <Portfolio openImageOnClick={openImageOnClick} />
       <h2 className="mt-4">Sunflower Land Projects</h2>
       <p>Here are some of the contributions that I made for Sunflower Land</p>
-      <SettingsMenu />
+      <SettingsMenu openImageOnClick={openImageOnClick} />
     </main>
   );
 };

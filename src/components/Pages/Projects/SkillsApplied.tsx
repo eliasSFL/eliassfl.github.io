@@ -35,7 +35,7 @@ export const SkillsApplied: React.FC<Props> = ({ skillsArray }) => {
               )}
               <Tooltip
                 anchorSelect={`.${name}`}
-                place="bottom"
+                place="top"
                 openOnClick={!!isMobile}
               >
                 {name}

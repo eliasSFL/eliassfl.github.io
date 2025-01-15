@@ -98,3 +98,26 @@ h3 {
     line-height: 2rem /* 32px */;
   }
 }
+h4 {
+  font-size: 1.5rem /* 24px */;
+  line-height: 2rem /* 32px */;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  h4 {
+    font-size: 1.25rem /* 20px */;
+    line-height: 1.75rem /* 28px */;
+  }
+}
+
+.settings-menu-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem /* 12px */;
+}
+
+@media (min-width: 768px) {
+  .settings-menu-sections {
+    flex-direction: row;
+  }
+}
