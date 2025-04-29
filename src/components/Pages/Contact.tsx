@@ -7,6 +7,7 @@ import {
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
+import profilePicture from "../../../src/assets/Elias-Profile-photo.jpeg";
 
 interface ContactItem {
   icon: IconDefinition;
@@ -61,7 +62,7 @@ export const Contact: React.FC = () => {
     <div className="flex flex-col items-center justify-center p-4 md:p-8">
       <h1 className="mt-6">Contact Me</h1>
       <img
-        src="https://media.licdn.com/dms/image/v2/D5603AQGDJRqJdBg2WQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720013407415?e=1741219200&v=beta&t=BaylGWJfRuAOteyM68mhGIsN63ki24vErAJhF-LeqTY"
+        src={profilePicture}
         alt="Elias"
         className="rounded-full w-32 h-32 md:w-40 md:h-40 mt-4"
       />
